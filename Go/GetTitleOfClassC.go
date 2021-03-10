@@ -48,7 +48,8 @@ func RequestPort(protocol string, host string, port string) {
 }
 
 func main() {
-	var url = "181.198.240."
+	//-------------------------------------------------------
+	var url = "192.168.1."
 	ports := []string{"80", "443", "8080"}
 	wg := sync.WaitGroup{}
 	for _, i := range ports {
