@@ -20,8 +20,7 @@ def fofa(str_url):
         if "https" not in isis:
             tmd = "http://" + i[0]
         else:
-            tmd = ''
-
+            tmd = i[0]
         nam = tmd
         print(nam)
 
