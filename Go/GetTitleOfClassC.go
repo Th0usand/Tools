@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"regexp"
 	"sync"
 	"time"
@@ -47,15 +48,27 @@ func RequestPort(protocol string, host string, port string) {
 	return
 }
 
+
 func main() {
-	//-------------------------------------------------------
-	var url = "192.168.1."
+	//var url = "192.168.1."
+	argsWithProg := os.Args
+	url := argsWithProg[1]
+	fmt.Println(url)
 	ports := []string{"80", "443", "8080"}
 	wg := sync.WaitGroup{}
 	for _, i := range ports {
 		wg.Add(1)
 		go func(port string) {
-			RequestPort("http", url, port)
+			switch port {
+			case "80":
+				RequestPort("http", url, port)
+			case "443":
+				RequestPort("https", url, port)
+			default:
+				RequestPort("http", url, port)
+
+			}
+
 			wg.Done()
 		}(i)
 	}
