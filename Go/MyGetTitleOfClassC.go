@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	//url := "106.75.212."
+	//url := "192.168.1."
 	argsWithProg := os.Args
 	url := argsWithProg[1]
 	var protocol = []string{"http", "https"}
