@@ -1,5 +1,6 @@
 export GOOS=windows GOARCH=amd64;go build -o 4.exe -ldflags "-H windowsgui" CreateProcess.go 
 
+shellcode need x64 raw(.bin) file .
 
 
 CreateRemoteThread.go  need process pid 
