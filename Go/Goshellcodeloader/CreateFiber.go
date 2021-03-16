@@ -22,8 +22,6 @@ func main() {
 	verbose := flag.Bool("verbose", false, "Enable verbose output")
 	debug := flag.Bool("debug", false, "Enable debug output")
 	flag.Parse()
-
-                                              // X64 raw shellcode
 	shellcode, errShellcode := hex.DecodeString("-------------")
 	if errShellcode != nil {
 		log.Fatal(fmt.Sprintf("[!]there was an error decoding the string to a hex byte array: %s", errShellcode.Error()))
@@ -140,5 +138,3 @@ func main() {
 	}
 	fmt.Println("[DEBUG]I AM HERE")
 }
-
-// export GOOS=windows GOARCH=amd64;go build -o 4.exe -ldflags "-H windowsgui" CreateFiber.go
