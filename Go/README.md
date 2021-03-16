@@ -3,7 +3,7 @@ use: go run xxxxxx.go 192.168.1.
 
 
 
-
+```text
 win build linux
 
 SET CGO_ENABLED=0
@@ -26,3 +26,4 @@ linux build mac and windows x86_64
 
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
+```
