@@ -1,4 +1,3 @@
-use: go run MyGetTitleOfClassC.go 192.168.1.
 
 
 
