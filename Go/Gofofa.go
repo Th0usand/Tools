@@ -33,7 +33,7 @@ func geturl() {
   
 	strbytes := []byte(str_url1)
 	str_url := base64.StdEncoding.EncodeToString(strbytes)
-	url := "https://fofa.so/api/v1/search/all?email=" + email + "&key=" + key + "&qbase64=" + str_url //+"&size=9999"
+	url := "https://fofa.so/api/v1/search/all?email=" + email + "&key=" + key + "&qbase64=" + str_url + "&size=9999"
 
 	resp, err := http.Get(url)
 
