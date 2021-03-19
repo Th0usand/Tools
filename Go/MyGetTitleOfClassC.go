@@ -15,7 +15,7 @@ func main() {
 	argsWithProg := os.Args
 	url := argsWithProg[1]
 	var protocol = []string{"http", "https"}
-	var port = []string{"80", "8080", "8081"}
+	var port = []string{"80", "8080", "8081", "443"}
 	var wg sync.WaitGroup
 
 	for i := 0; i < 256; i++ {
@@ -42,8 +42,12 @@ func gettitle(urls string, wg *sync.WaitGroup) {
 
 	timeout := time.Duration(3 * time.Second)
 
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
 	client := http.Client{
 		Timeout: timeout,
+		Transport: tr,
 	}
 	resp, err := client.Get(urls)
 
