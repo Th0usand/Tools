@@ -68,6 +68,7 @@ func gettitle(urls string, wg *sync.WaitGroup) {
 
 	wg.Done()
 
+	
 }
 
 //go run MyGetTitleOfClassC.go 192.168.1.
